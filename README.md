@@ -1,144 +1,49 @@
-# 19 Progressive Web Applications (PWA): Text Editor
+## Just Your Average Text Editor
 
-## Your Task
+## Description
+Just Your Average Text Editor is as the name implies, a browser-run text-editor deployed via Render. When a user opens up the application, they should be able to console.log strings of code, text, etc and see it in real time. When the page reloads, the user is still able to see what was written previously on the page until the user themselves removes the text data. 
 
-As you have progressed through this course, you have put together a number of impressive projects that you can show off to potential employers. This project is no exception; in fact, it features some of the most impressive expressions of the concepts you have learned so far.
 
-Your task is to build a text editor that runs in the browser. The app will be a single-page application that meets the PWA criteria. Additionally, it will feature a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser. The application will also function offline.
+## Visuals
+Demo Gif:
+<video controls src="Assets/text-editor-demo.mp4" title="Title"></video>
 
-To build this text editor, you will start with an existing application and implement methods for getting and storing data to an IndexedDB database. You will use a package called `idb`, which is a lightweight wrapper around the IndexedDB API. It features a number of methods that are useful for storing and retrieving data, and is used by companies like Google and Mozilla.
+Render Deployed Website:
+<a href="https://pwa-text-editor-1-bwor.onrender.com/" title="J.A.T.E"></a>
 
-You will deploy this full-stack application to Render using the [Render Deployment Guide on The Full-Stack Blog](https://coding-boot-camp.github.io/full-stack/render/render-deployment-guide).
+## Installation
+J.A.T.E has no installation prerequisites, making it easy for users to implement. All a user needs to do is navigate to the site via the link above and use as they see fit. 
 
-**Important**: Make sure your submission includes the `.npmrc` file in this starter code.  This will ensure your application will deploy properly to Render.
+## Usage
+J.A.T.E is perfect for small scale coding. With its' ability to keep previous information available for users even when the page is refreshed, J.A.T.E allows users to 'jump back in' to their code with little trouble or resistance. As it has its' own automatic save feature, a user just needs to pull it back up on their browser and they should be more than fine. Keep in mind that it may not work the same way on another browser or device, as it depends on local storage to keep the data input into its' system.
 
-## User Story
+## Support
+If for some reason the application isn't working, please feel free to contact me here on GitHub or via my email: Leesamarie95@gmail.com for any questions or concerns. I'll do my best to trouble shoot, and, if in the event that I myself am running into issues, the GitHub help forums, Stack Overflow forums, and even the Render forums can be wonderful tools to implement when working through errors. 
 
-```md
-AS A developer
-I WANT to create notes or code snippets with or without an internet connection
-SO THAT I can reliably retrieve them for later use
-```
+## Roadmap
+There are plenty of things I'd love to work on to make this truly my own. Most of these include account features and an actual install feature, but for the most part my ideas are as follows:
 
-## Acceptance Criteria
+- Implement a Sign Up/Login/Logout/Account feature that allows users to save all codes on to an account so they can have several projects going at once. 
+- Implement HTML, CSS, and JavaScript real time editing to allow users to see their work update as one cohesive piece of work as they code for easier troubleshooting.
+- Allow users to install the text editor on to their preferred device for portability and ease of use. 
+- Implement a mobile friendly version of the text editor for those on the go.
 
-```md
-GIVEN a text editor web application
-WHEN I open my application in my editor
-THEN I should see a client server folder structure
-WHEN I run `npm run start` from the root directory
-THEN I find that my application should start up the backend and serve the client
-WHEN I run the text editor application from my terminal
-THEN I find that my JavaScript files have been bundled using webpack
-WHEN I run my webpack plugins
-THEN I find that I have a generated HTML file, service worker, and a manifest file
-WHEN I use next-gen JavaScript in my application
-THEN I find that the text editor still functions in the browser without errors
-WHEN I open the text editor
-THEN I find that IndexedDB has immediately created a database storage
-WHEN I enter content and subsequently click off of the DOM window
-THEN I find that the content in the text editor has been saved with IndexedDB
-WHEN I reopen the text editor after closing it
-THEN I find that the content in the text editor has been retrieved from our IndexedDB
-WHEN I click on the Install button
-THEN I download my web application as an icon on my desktop
-WHEN I load my web application
-THEN I should have a registered service worker using workbox
-WHEN I register a service worker
-THEN I should have my static assets pre cached upon loading along with subsequent pages and static assets
-WHEN I deploy to Render
-THEN I should have proper build scripts for a webpack application
-```
+## Contributing
+I would love contributors to help make my roadmap into a reality. I only really ask that those familiar with Express.js, Node, Java, HTML, and CSS come flocking (as it's also what I'm currently learning as well). We're all continuing to learn, so please feel free to join in if you're just starting out as well!
 
-## Mock-Up
+As this project runs with Node and Express, I highly suggest having those loaded on to your computer before interacting with the coding itself, as it won't work otherwise. When it is, go through the 'npm install' and 'npm start' calls in your terminal to get the program running on the localhost:3000 port, and dive in! I suggest poking through the console log under the Inspect element, and the Application log just to see how the application is storing values.
 
-The following animation demonstrates the application functionality:
+## Authors and acknowledgment
+I'd like to thank my teachers for their consistent patience with my foolhardy questions, as well as my fellow classmate Kyle G. for walking me through the process of making sure my code was actually functioning. I'd also like to thank GitHub user <a href="https://github.com/stellalph">stellalph</a> for having such a comprehensive version of this code already in a repository for me to poke through and see where I needed to feasibly start. I'd still be scratching my head on where to begin without users like them guiding baby coders like myself. 
 
-![Demonstration of the finished Module 19 Challenge being used in the browser and then installed.](./Assets/00-demo.gif)
+## License
+MIT License
 
-The following image shows the application's `manifest.json` file:
+Copyright (c) 2023 LeesaM95
 
-![Demonstration of the finished Module 19 Challenge with a manifest file in the browser.](./Assets/01-manifest.png)
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The following image shows the application's registered service worker:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-![Demonstration of the finished Module 19 Challenge with a registered service worker in the browser.](./Assets/02-service-worker.png)
-
-The following image shows the application's IndexedDB storage:
-
-![Demonstration of the finished Module 19 Challenge with a IndexedDB storage named 'jate' in the browser.](./Assets/03-idb-storage.png)
-
-## Grading Requirements
-
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-
-This Challenge is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria plus the following:
-
-  * Uses IndexedDB to create an object store and includes both GET and PUT methods
-
-  * The application works without an internet connection
-
-  * Automatically saves content inside the text editor when the DOM window is unfocused
-
-  * Bundled with webpack
-
-  * Create a service worker with workbox that Caches static assets
-
-  * The application should use babel in order to use async / await
-
-  * Application must have a generated `manifest.json` using the `WebpackPwaManifest` plug-in
-
-  * Can be installed as a Progressive Web Application
-
-### Deployment: 32%
-
-* Application deployed to Render at live URL with build scripts
-
-* Application loads with no errors
-
-* Application GitHub URL submitted
-
-* GitHub repo contains application code
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate
-
-* Application user interface style is clean and polished
-
-* Application resembles the mock-up functionality provided in the Challenge instructions
-
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
-- - -
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## Project status
+This project is still ongoing, albeit slowly. I would love to implement the features described in #Roadmap, however with my time constrictions, that will have to wait until I have a little more time and knowledge under my belt.
