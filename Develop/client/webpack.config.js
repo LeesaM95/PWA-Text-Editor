@@ -20,6 +20,9 @@ module.exports = () => {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
+    devServer: {
+      hot: "only"
+    },
     plugins: [
       new HtmlWebpackPlugin({
         template:'./index.html',
@@ -52,16 +55,19 @@ module.exports = () => {
 
     module: {
       rules: [
-        {
+      {
         test: /\.css$/i,
-        exclude: /mode_modules/,
-
+        use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
-          }
+            plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/plugin-transform-runtime']
+          },
         }
       }
       ],
